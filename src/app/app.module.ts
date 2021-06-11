@@ -5,7 +5,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from "./app.component";
 import { CoreModule } from "./core/core.module";
 import { BrowserModule } from "@angular/platform-browser";
-import { LoginComponent } from './modules/pages/login/login.component';
 
 @NgModule({
   imports: [
@@ -15,7 +14,7 @@ import { LoginComponent } from './modules/pages/login/login.component';
     ToastrModule.forRoot(),
 
   ],
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
