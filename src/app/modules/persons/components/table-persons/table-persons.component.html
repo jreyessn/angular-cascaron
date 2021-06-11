@@ -1,0 +1,33 @@
+<app-search-bar  
+  [defaultValues]="paginator"
+  (changeValues)="paginator.setSearchBar($event); paginate()">
+</app-search-bar>
+
+<div class="dropdown-divider"></div>
+
+<div class="table-responsive">
+
+    <ngx-datatable 
+      class="bootstrap striped" 
+      [rows]="data" 
+      [headerHeight]="50" 
+      [scrollbarH]="true"
+      [footerHeight]="50"
+      rowHeight="auto" 
+      [count]="paginator.totalElements"
+      [offset]="paginator.page"
+      [limit]="paginator.perPage"
+      (page)="paginator.setPage($event); paginate()"
+      [externalPaging]="true"
+      (sort)="paginator.onSort($event); paginate()"
+      [externalSorting]="true"
+      [columnMode]="'force'"
+    >
+      <ngx-datatable-column name="Nombre" prop="first_name" [sortable]="false" [width]="70"></ngx-datatable-column>
+      <ngx-datatable-column name="Apellido" prop="last_name" [sortable]="false" [width]="70"></ngx-datatable-column>
+      <ngx-datatable-column name="Correo" prop="email" [sortable]="false" [width]="70"></ngx-datatable-column>
+
+    </ngx-datatable>
+
+ 
+  </div>

@@ -1,0 +1,29 @@
+<form class="row" [formGroup]="formBar">
+    <div class="col-md-1">
+        <div class="form-group">
+            <label class="text-muted">Mostrar</label>
+            <select class="form-control" formControlName="perPage">
+                <option *ngFor="let q of perPages" [value]="q">{{ q }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-11">
+        <div class="input-group d-flex justify-content-initial">
+            <label class="text-muted">Buscar</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <a href="javascript:void(0)" class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <input 
+                    formControlName="search"
+                    type="text" 
+                    class="form-control"
+                    placeholder="Busqueda"
+                    aria-describedby="basic-addon1"
+                />
+            </div>
+        </div>
+    </div> 
+</form>

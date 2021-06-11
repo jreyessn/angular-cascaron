@@ -1,0 +1,23 @@
+<div class="row bg-title">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+      <h4 class="page-title">
+          {{ (dataRoute | async).title }}
+      </h4>
+    </div>
+    <div class="col-lg-9 col-md-6 col-sm-6 col-xs-12">
+       <button class="btn btn-info pull-right" [routerLink]="['/persons/add']">
+         Agregar
+        </button>
+    </div>
+  </div>
+
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-body">
+          <app-table-persons></app-table-persons>
+        </div>
+      </div>
+    </div>
+  </div>
+
