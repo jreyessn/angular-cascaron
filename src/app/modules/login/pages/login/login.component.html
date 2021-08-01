@@ -1,3 +1,53 @@
-<p>login works!</p>
 
-<button (click)="login()">Entrar</button>
+  <div class="login-box">
+    <div class="lb-header">
+      <a 
+        class="pointer"
+        (click)="activeSignIn = true" 
+        [ngClass]="{'active': activeSignIn}"
+        >Login</a>
+      <a 
+        class="pointer"
+        (click)="activeSignIn = false"  
+        [ngClass]="{'active': !activeSignIn}"
+        >Sign Up</a>
+    </div>
+    <div class="social-login">
+      <!-- <a>
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with facebook
+      </a> -->
+      <a class="pointer" (click)="authService.withGoogle()">
+        <i class="fa fa-google-plus fa-lg"></i>
+        log in with Google
+      </a>
+    </div>
+    <form class="email-login" [hidden]="!activeSignIn">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Log in</button>
+      </div>
+      <div class="u-form-group">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+    </form>
+    <form class="email-signup" [hidden]="activeSignIn">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password"/>
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Confirm Password"/>
+      </div>
+      <div class="u-form-group">
+        <button>Sign Up</button>
+      </div>
+    </form>
+  </div>

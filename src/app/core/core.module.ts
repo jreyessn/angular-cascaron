@@ -7,6 +7,7 @@ import { ApiInterceptor } from './interceptors/api.interceptor';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { CatchErrorsInterceptor } from './interceptors/catch.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FirebaseModule } from './firebase/firebase.module';
 
 @NgModule({
   declarations: [],
@@ -14,12 +15,13 @@ import { NgxSpinnerModule } from "ngx-spinner";
     CommonModule,
     HttpClientModule,
     NgxSpinnerModule,
+    FirebaseModule,
     RouterModule.forRoot(routes, {
       useHash: false
     })
   ],
   exports: [
-    RouterModule
+    RouterModule,
   ],
   providers: [
     { 

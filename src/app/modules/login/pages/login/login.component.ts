@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../../core/auth/auth.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,18 @@ import { AuthService } from '../../../../core/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  activeSignIn: boolean = true;
+
   constructor(
-    private authService: AuthService,
-    private router: Router
+    public authService: AuthService,
+    private router: Router,
+    private loginService: LoginService,
   ) { }
 
   ngOnInit(): void {
-    
+    this.loginService.test().subscribe(value => {
+      console.log(value)
+    })
   }
 
   login(){
@@ -23,4 +29,5 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/dashboard'])
   }
 
+ 
 }
